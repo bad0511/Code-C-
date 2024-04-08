@@ -1,0 +1,20 @@
+#include<stdio.h>
+int cnt[10000001];
+int main(){
+	int n;
+	scanf("%d",&n);
+	int a[n];
+	int max = -1e9;
+	for(int i = 0 ; i < n ; i++){
+		scanf("%d",&a[i]);
+		if(a[i] > max)
+			max = a[i];
+		++cnt[a[i]];
+	}
+	for(int i = 0 ; i <= max ; i++){
+		if(cnt[i] != 0){
+			printf("%d ", i);
+			cnt[i] = 0;
+		}
+	}
+}
